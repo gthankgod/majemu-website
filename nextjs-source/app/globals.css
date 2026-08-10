@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Self-hosted variable fonts ---------- */
+@font-face {
+  font-family: "Archivo Var";
+  src: url("/fonts/archivo-var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo Var";
+  src: url("/fonts/archivo-var-italic.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces Var";
+  src: url("/fonts/fraunces-var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces Var";
+  src: url("/fonts/fraunces-var-italic.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ephesis";
+  src: url("/fonts/ephesis.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-archivo: "Archivo Var";
+  --font-fraunces: "Fraunces Var";
+  --font-ephesis: "Ephesis";
+  --blood: #a81408;
+  --ink: #0a0a0a;
+  --bone: #faf7f2;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--blood);
+  color: var(--bone);
+}
+
+/* Hide native cursor only when custom cursor is active (fine pointers) */
+@media (pointer: fine) {
+  body.has-cursor,
+  body.has-cursor a,
+  body.has-cursor button {
+    cursor: none;
+  }
+}
+
+/* ---------- Type utilities ---------- */
+.h-mega {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1.5px var(--bone);
+  color: transparent;
+}
+.text-stroke-red {
+  -webkit-text-stroke: 1.5px var(--blood);
+  color: transparent;
+}
+.text-stroke-ink {
+  -webkit-text-stroke: 1.5px var(--ink);
+  color: transparent;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+/* word/line reveal helpers — animated with GSAP */
+.reveal-line {
+  display: block;
+  overflow: hidden;
+}
+.reveal-line > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-speed, 30s) linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* grain overlay for cinematic texture */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -100%;
+  z-index: 120;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain::after,
+  .marquee-track {
+    animation: none;
+  }
+}
