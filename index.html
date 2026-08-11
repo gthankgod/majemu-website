@@ -106,15 +106,13 @@ header .in{display:flex;align-items:center;justify-content:space-between;padding
 .hero-t1{font-size:19vw}
 .hero-t2{font-size:13.2vw;margin-top:-1vw}
 @media(min-width:768px){.hero-t1{font-size:15.5vw}.hero-t2{font-size:10.8vw}}
-.hero-script{position:absolute;left:58%;top:68%;transform:translateX(-50%);z-index:20;font-family:var(--script);font-size:13vw;line-height:1;color:var(--blood);pointer-events:none}
+.hero-script{position:absolute;left:58%;top:47%;transform:translateX(-50%);z-index:20;font-family:var(--script);font-size:13vw;line-height:1;color:var(--blood);pointer-events:none}
 @media(min-width:768px){.hero-script{top:64%;font-size:6.5vw}}
-.hero-roles{position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:20;display:none}
-@media(min-width:768px){.hero-roles{display:block}}
-.hero-roles ul{list-style:none;writing-mode:vertical-rl;display:flex;flex-direction:column;gap:24px;font-size:11px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:rgba(250,247,242,.8)}
-.hero-bottom{position:absolute;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:flex-end;justify-content:space-between;padding:0 20px 24px}
+.hero-roles-line{margin-top:9vw;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:8px 12px;font-weight:700;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--bone)}
+@media(min-width:768px){.hero-roles-line{margin-top:3vw;font-size:14px;gap:10px 20px;letter-spacing:.35em}}
+.hero-roles-line i{color:var(--blood);font-style:normal}
+.hero-bottom{position:absolute;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 20px 24px}
 @media(min-width:768px){.hero-bottom{padding:0 40px 32px}}
-.hero-tag{max-width:180px;font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.4;color:rgba(250,247,242,.8)}
-@media(min-width:768px){.hero-tag{max-width:220px;font-size:16px}}
 .hero-ctas{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 @media(min-width:768px){.hero-ctas{flex-direction:row;align-items:center;gap:16px}}
 .btn{position:relative;overflow:hidden;display:inline-block;background:var(--blood);padding:16px 28px;font-size:12px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--bone)}
@@ -150,11 +148,9 @@ header .in{display:flex;align-items:center;justify-content:space-between;padding
 .mf-copy{display:flex;flex-direction:column;justify-content:space-between}
 .mf-copy p{max-width:28rem;font-size:16px;line-height:1.7;color:rgba(10,10,10,.7)}
 @media(min-width:768px){.mf-copy p{font-size:18px}}
-.mf-words{list-style:none;margin-top:64px}
-@media(min-width:768px){.mf-words{margin-top:0}}
-.mf-words li{border-top:1px solid rgba(10,10,10,.15);padding:16px 0;font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:1;font-size:9vw;color:var(--ink)}
-@media(min-width:768px){.mf-words li{padding:20px 0;font-size:3.6vw}}
-.mf-words li.alt{text-align:right;-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.mf-copy p+p{margin-top:18px}
+.mf-copy .mf-quote{margin-top:36px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;line-height:1.4;color:var(--blood);max-width:26rem}
+@media(min-width:768px){.mf-copy .mf-quote{font-size:30px}}
 
 /* brands */
 #brands{background:var(--ink);padding:112px 0}
@@ -165,16 +161,13 @@ header .in{display:flex;align-items:center;justify-content:space-between;padding
 .br-h{margin-top:24px;font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.95;font-size:8.5vw;color:var(--bone)}
 @media(min-width:768px){.br-h{font-size:4.2vw}}
 .br-h .serif-it{color:var(--blood)}
-.mq{overflow:hidden;white-space:nowrap;margin-top:16px}
-.mq-track{display:inline-flex;align-items:center;animation:marquee var(--spd,36s) linear infinite}
-.mq-track:hover{animation-play-state:paused}
-.mq.rev .mq-track{animation-direction:reverse}
-.mq b{margin:0 24px;display:inline-flex;align-items:center;gap:48px;font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:1;font-size:8vw;color:rgba(250,247,242,.25);transition:color .3s}
-.mq b:hover{color:var(--blood)}
-@media(min-width:768px){.mq b{font-size:4.5vw}}
-.mq b i{width:8px;height:8px;border-radius:50%;background:rgba(168,20,8,.6)}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mqs{margin-top:64px;display:flex;flex-direction:column;gap:16px}
+.brand-wall{margin-top:56px;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:28px;row-gap:18px;padding:0 20px}
+@media(min-width:768px){.brand-wall{margin-top:72px;column-gap:44px;row-gap:26px;padding:0 40px}}
+.brand-wall b{display:inline-flex;align-items:center;gap:28px;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1;font-size:clamp(20px,5.4vw,28px);color:rgba(250,247,242,.4);transition:color .3s;white-space:nowrap}
+@media(min-width:768px){.brand-wall b{gap:44px;font-size:clamp(24px,2.6vw,42px)}}
+.brand-wall b:hover{color:var(--blood)}
+.brand-wall b i{width:7px;height:7px;border-radius:50%;background:rgba(168,20,8,.6)}
+.brand-wall b:last-child i{display:none}
 
 /* events */
 #events{background:var(--ink)}
@@ -183,36 +176,19 @@ header .in{display:flex;align-items:center;justify-content:space-between;padding
 .ev-h{font-size:12vw;color:var(--bone)}
 @media(min-width:768px){.ev-h{font-size:7vw}}
 .ev-sub{max-width:20rem;padding-bottom:12px;font-size:14px;line-height:1.7;color:rgba(250,247,242,.6)}
-.ev-grid{margin-top:64px;columns:1;column-gap:20px}
-@media(min-width:768px){.ev-grid{margin-top:80px;columns:3}}
-.ev-card{position:relative;margin-bottom:20px;break-inside:avoid;overflow:hidden;background:var(--smoke)}
-.ev-card .im{position:relative;overflow:hidden}
-.ev-card .im.p{aspect-ratio:4/5}.ev-card .im.l{aspect-ratio:4/3}.ev-card .im.t{aspect-ratio:9/13}
+.ev-grid{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px 14px}
+@media(min-width:768px){.ev-grid{margin-top:72px;grid-template-columns:repeat(4,1fr);gap:32px 18px}}
+.ev-card{position:relative}
+.ev-card.wide{grid-column:span 2}
+.ev-card .im{position:relative;overflow:hidden;background:var(--smoke);aspect-ratio:4/5}
+.ev-card.wide .im{aspect-ratio:8/5}
 .ev-card img{transition:transform .7s var(--expo)}
-.ev-card:hover img{transform:scale(1.06)}
-.ev-card .im::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.9),rgba(10,10,10,.1) 55%,transparent);opacity:0;transition:opacity .5s}
-.ev-card:hover .im::after{opacity:1}
-.ev-cap{position:absolute;left:0;right:0;bottom:0;padding:20px;transform:translateY(16px);opacity:0;transition:all .5s var(--expo)}
-.ev-card:hover .ev-cap{transform:translateY(0);opacity:1}
-.ev-cap .k{font-size:10px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--blood)}
-.ev-cap h3{margin-top:4px;font-weight:800;text-transform:uppercase;letter-spacing:-.04em;line-height:1.15;font-size:20px;color:var(--bone)}
-@media(min-width:768px){.ev-cap h3{font-size:24px}}
-.ev-cap .v{margin-top:4px;font-family:var(--serif);font-style:italic;font-size:14px;color:rgba(250,247,242,.7)}
-
-/* energy */
-#energy{position:relative;overflow:hidden;background:var(--ink)}
-@media(min-width:768px){#energy{height:100vh}}
-#energy .label{position:absolute;left:20px;top:96px;z-index:10;mix-blend-mode:difference;color:var(--bone);opacity:.4}
-@media(min-width:768px){#energy .label{left:40px}}
-.en-wrap{position:relative;display:flex;flex-direction:column}
-@media(min-width:768px){.en-wrap{height:100%}}
-.en-slide{display:flex;min-height:70vh;flex-direction:column;align-items:center;justify-content:center;padding:64px 20px;text-align:center}
-@media(min-width:768px){.en-slide{position:absolute;inset:0;min-height:0;padding:0;background:transparent!important}}
-.en-idx{font-family:var(--serif);font-style:italic;font-size:14px;opacity:.6}
-.en-word{margin-top:16px;font-size:16vw}
-@media(min-width:768px){.en-word{font-size:11vw}}
-.en-line{margin-top:24px;max-width:28rem;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.6;opacity:.8}
-@media(min-width:768px){.en-line{font-size:24px}}
+.ev-card:hover img{transform:scale(1.05)}
+.ev-cap{padding-top:12px}
+.ev-cap .k{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--blood)}
+.ev-cap h3{margin-top:4px;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1.15;font-size:13px;color:var(--bone)}
+@media(min-width:768px){.ev-cap h3{font-size:15px}}
+.ev-cap .v{margin-top:3px;font-family:var(--serif);font-style:italic;font-size:12px;line-height:1.4;color:rgba(250,247,242,.6)}
 
 /* numbers */
 #numbers{border-top:1px solid rgba(250,247,242,.1);border-bottom:1px solid rgba(250,247,242,.1);background:var(--ink);padding:96px 20px}
@@ -345,7 +321,7 @@ footer .label{color:rgba(250,247,242,.4)}
 @keyframes ping{75%,100%{transform:scale(2.4);opacity:0}}
 
 @media(prefers-reduced-motion:reduce){
-  .grain::after,.mq-track,.hero-scroll s,#float-book .ping::before{animation:none}
+  .grain::after,.hero-scroll s,#float-book .ping::before{animation:none}
 }
 </style>
 </head>
@@ -374,15 +350,14 @@ footer .label{color:rgba(250,247,242,.4)}
   <nav>
     <div class="ml"><a class="item" href="#manifesto"><span class="n">01</span>The Experience</a></div>
     <div class="ml"><a class="item" href="#events"><span class="n">02</span>Events</a></div>
-    <div class="ml"><a class="item" href="#energy"><span class="n">03</span>Energy</a></div>
-    <div class="ml"><a class="item" href="#testimonials"><span class="n">04</span>Kind Words</a></div>
-    <div class="ml"><a class="item" href="#faq"><span class="n">05</span>FAQ</a></div>
+    <div class="ml"><a class="item" href="#testimonials"><span class="n">03</span>Kind Words</a></div>
+    <div class="ml"><a class="item" href="#faq"><span class="n">04</span>FAQ</a></div>
   </nav>
   <div class="foot">
     <div class="socials">
-      <a href="https://instagram.com/majemu__" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://instagram.com/majemuoluwa__" target="_blank" rel="noreferrer">Instagram</a>
       <a href="https://linkedin.com/in/majemuolowodola" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="mailto:helo@majemuolowodola.com">Email</a>
+      <a href="mailto:yourstrulymajemuoluwa@gmail.com">Email</a>
     </div>
     <p class="sig">Creating experiences. One event at a time.</p>
   </div>
@@ -400,15 +375,11 @@ footer .label{color:rgba(250,247,242,.4)}
       <span class="rl hero-t2 hero-line"><span class="stroke">OLOWODOLA</span></span>
     </h1>
     <span class="hero-script">Olowodola</span>
-  </div>
-  <div class="hero-roles hero-fade hero-meta">
-    <ul><li>MC</li><li>COMPÈRE</li><li>MODERATOR</li><li>EVENT HOST</li></ul>
+    <p class="hero-roles-line hero-meta hero-fade">MC <i>&middot;</i> COMP&Egrave;RE <i>&middot;</i> MODERATOR <i>&middot;</i> EVENT HOST</p>
   </div>
   <div class="hero-bottom hero-meta">
-    <p class="hero-tag hero-fade">Creating moments people remember.</p>
     <div class="hero-ctas hero-fade">
       <a href="https://wa.me/2348127632241?text=Hi%20Majemu!%20I%27d%20love%20to%20book%20you%20as%20an%20MC%20for%20my%20event." target="_blank" rel="noreferrer" class="btn" data-cursor="LET'S GO"><i></i><u>Book Majemu</u></a>
-      <a href="#events" class="link">See the work</a>
     </div>
   </div>
   <div class="hero-scroll hero-meta hero-fade"><b>Scroll</b><s></s></div>
@@ -427,14 +398,12 @@ footer .label{color:rgba(250,247,242,.4)}
     </div>
     <div></div>
     <div class="mf-copy">
-      <p>With energy, presence and intentionality, I turn moments into memories. From corporate stages to intimate gatherings to arenas of thousands, I bring the same commitment: connect with the audience, elevate the experience, and make every moment count.</p>
-      <ul class="mf-words">
-        <li class="mf-word">Presence</li>
-        <li class="mf-word alt">Energy</li>
-        <li class="mf-word">Connection</li>
-        <li class="mf-word alt">Confidence</li>
-        <li class="mf-word">Impact</li>
-      </ul>
+      <p class="label" style="color:rgba(10,10,10,.4);margin-bottom:20px">Meet Me</p>
+      <p>I'm Majemuoluwa Olowodola, an event host, comp&egrave;re and moderator passionate about creating experiences people remember long after the lights go out.</p>
+      <p>By profession, I'm a Product Manager working with global technology companies, where clear communication, leadership and attention to detail are part of my everyday work. On stage, those same qualities come together with warmth, confidence and a genuine love for people to create events that feel seamless, engaging and unforgettable.</p>
+      <p>Over the years, I've had the privilege of hosting corporate conferences, leadership summits, social events, awards ceremonies and community events, connecting with audiences of all sizes and ensuring every programme flows with purpose and energy.</p>
+      <p>For me, hosting goes beyond making announcements or introducing speakers. It's about setting the tone, creating meaningful connections, and making every guest feel like they're part of something special.</p>
+      <p class="mf-quote">Because great events don't just happen. They are experienced.</p>
     </div>
   </div>
 </section>
@@ -447,10 +416,7 @@ footer .label{color:rgba(250,247,242,.4)}
       <span class="rl br-line"><span><em class="serif-it">excellence.</em></span></span>
     </h2>
   </div>
-  <div class="mqs">
-    <div class="mq" style="--spd:36s"><div class="mq-track" id="mq1"></div></div>
-    <div class="mq rev" style="--spd:42s"><div class="mq-track" id="mq2"></div></div>
-  </div>
+  <div class="brand-wall" id="brand-wall"></div>
 </section>
 
 <!-- EVENTS -->
@@ -465,17 +431,12 @@ footer .label{color:rgba(250,247,242,.4)}
   <div class="ev-grid" id="ev-grid"></div>
 </section>
 
-<!-- ENERGY -->
-<section id="energy">
-  <div class="en-wrap" id="en-wrap"></div>
-</section>
-
 <!-- NUMBERS -->
 <section id="numbers">
   <div class="nm-grid">
-    <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="100">0</span><span class="sfx">+</span></p><p class="nm-l">Events Hosted</p></div>
-    <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="50">0</span><span class="sfx">K+</span></p><p class="nm-l">Audience Members</p></div>
-    <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="20">0</span><span class="sfx">+</span></p><p class="nm-l">Cities &amp; Counting</p></div>
+    <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="22">0</span><span class="sfx">+</span></p><p class="nm-l">Events Hosted</p></div>
+    <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="13">0</span><span class="sfx">K+</span></p><p class="nm-l">Audience Members</p></div>
+    <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="5">0</span></p><p class="nm-l">Cities &amp; Counting</p></div>
     <div class="nm-item"><p class="mega nm-v"><span class="nm-count" data-value="12">0</span><span class="sfx">+</span></p><p class="nm-l">Brands Trusted</p></div>
   </div>
   <p class="nm-formats">Corporate <b>·</b> Faith <b>·</b> Social <b>·</b> Virtual</p>
@@ -500,9 +461,7 @@ footer .label{color:rgba(250,247,242,.4)}
 <section id="faq" class="sec">
   <div class="fq-grid">
     <div>
-      <p class="label">Before You Ask</p>
       <h2 class="mega fq-h">Good<br />questions<span class="dot">.</span></h2>
-      <p class="fq-sub">Everything you're wondering before you send the booking email. If it's not here, just ask.</p>
     </div>
     <div id="fq-list"></div>
   </div>
@@ -537,7 +496,6 @@ footer .label{color:rgba(250,247,242,.4)}
       <ul class="ft-list">
         <li><a href="#manifesto">The Experience</a></li>
         <li><a href="#events">Events</a></li>
-        <li><a href="#energy">Energy</a></li>
         <li><a href="#testimonials">Kind Words</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#book">Book</a></li>
@@ -546,9 +504,9 @@ footer .label{color:rgba(250,247,242,.4)}
     <div>
       <p class="label">Get In Touch</p>
       <ul class="ft-list contact">
-        <li><a href="mailto:helo@majemuolowodola.com">✉ &nbsp;helo@majemuolowodola.com</a></li>
-        <li><a href="tel:+2349012345678">✆ &nbsp;+234 901 234 5678</a></li>
-        <li><a href="https://instagram.com/majemu__" target="_blank" rel="noreferrer">◎ &nbsp;@majemu__</a></li>
+        <li><a href="mailto:yourstrulymajemuoluwa@gmail.com">✉ &nbsp;yourstrulymajemuoluwa@gmail.com</a></li>
+        <li><a href="tel:+2348078384479">✆ &nbsp;+234 807 838 4479</a></li>
+        <li><a href="https://instagram.com/majemuoluwa__" target="_blank" rel="noreferrer">◎ &nbsp;@majemuoluwa__</a></li>
         <li><a href="https://linkedin.com/in/majemuolowodola" target="_blank" rel="noreferrer">in &nbsp;LinkedIn</a></li>
       </ul>
     </div>
@@ -621,34 +579,30 @@ footer .label{color:rgba(250,247,242,.4)}
 })();
 
 /* ============ data ============ */
-const IMGS = {"event-1pct-edge": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370004/event-1pct-edge.jpg", "event-fireside-orange": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370004/event-fireside-orange.jpg", "event-becoming-mom": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370003/event-becoming-mom.jpg", "event-unilag": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370005/event-unilag.jpg", "event-fireside-lbs": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370004/event-fireside-lbs.jpg", "event-cod-hosting": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370004/event-cod-hosting.jpg", "event-harde": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370004/event-harde.jpg", "stage-green-dress": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370008/stage-green-dress.jpg", "bts-selfie": "https://res.cloudinary.com/dti84lbnc/image/upload/bts-selfie.jpg", "event-moderating": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370007/event-moderating.jpg", "event-becoming-mom-panel": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370003/event-becoming-mom-panel.jpg", "portrait-cod-peace": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370007/portrait-cod-peace.jpg"};
+const IMGS = {"gallery-1pct-edge": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-1pct-edge.jpg", "gallery-harde": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-harde.jpg", "gallery-fireside-lbs": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-fireside-lbs.jpg", "gallery-inspire": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-inspire.jpg", "gallery-gig-economy": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-gig-economy.jpg", "gallery-panel-red": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-panel-red.jpg", "gallery-lq-tour": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-lq-tour.jpg", "gallery-green-dress": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-green-dress.jpg", "gallery-abbas-love-letters": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-abbas-love-letters.jpg", "gallery-becoming-mom": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-becoming-mom.jpg", "gallery-cod-party": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-cod-party.jpg", "gallery-cod-crowd": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-cod-crowd.jpg", "gallery-save-nigeria": "https://res.cloudinary.com/dti84lbnc/image/upload/gallery-save-nigeria.jpg", "portrait-cod-peace": "https://res.cloudinary.com/dti84lbnc/image/upload/v1786370007/portrait-cod-peace.jpg"};
 const BRANDS = ["Sterling Bank","Hardé Business School","Call of Duty Mobile","Carry1st","Chillians","LBS","Inspire Africa","Raenest","Cafe One","Save Nigeria Campaign","Powerpoint Tribe"];
 const EVENTS = [
-  {img:"event-1pct-edge",title:"The 1% Edge",role:"Host",venue:"Lagos Business Summit",tag:"Corporate",r:"p"},
-  {img:"event-fireside-orange",title:"The Gig Economy — Fireside Chat",role:"Panelist & Moderator",venue:"Tech Conference, Lagos",tag:"Conference",r:"l"},
-  {img:"event-becoming-mom",title:"Becoming Mom",role:"Host & Moderator",venue:"PowerPoint Tribe",tag:"Social",r:"p"},
-  {img:"event-unilag",title:"LQ Tour",role:"Host",venue:"University of Lagos",tag:"Campus",r:"t"},
-  {img:"event-fireside-lbs",title:"Fireside Chat",role:"Moderator",venue:"LBS by PowerPoint Tribe",tag:"Corporate",r:"l"},
-  {img:"event-cod-hosting",title:"COD Mobile Championship Watch Party",role:"Host",venue:"Home of Games Africa",tag:"Gaming",r:"l"},
-  {img:"event-harde",title:"Hardé Business School",role:"Compère",venue:"Executive Programme, Lagos",tag:"Corporate",r:"p"},
-  {img:"stage-green-dress",title:"Night of Excellence",role:"Event Host",venue:"Lagos",tag:"Awards",r:"l"}
+  {img:"gallery-1pct-edge",title:"The 1% Edge",role:"Leaders & Builders Summit",venue:"",tag:"Corporate",wide:false},
+  {img:"gallery-harde",title:"Hardé Business School",role:"Business Leaders Executive Program",venue:"",tag:"Corporate",wide:false},
+  {img:"gallery-fireside-lbs",title:"Fireside Chat",role:"Leaders & Builders Summit",venue:"",tag:"Corporate",wide:true},
+  {img:"gallery-inspire",title:"Inspire Conference",role:"Host",venue:"University of Lagos",tag:"Conference",wide:false},
+  {img:"gallery-gig-economy",title:"The Gig Economy",role:"Amplify Conference",venue:"",tag:"Conference",wide:true},
+  {img:"gallery-panel-red",title:"Panel Session",role:"Amplify Conference",venue:"",tag:"Conference",wide:false},
+  {img:"gallery-lq-tour",title:"LQ Tour",role:"University of Ibadan",venue:"",tag:"Campus",wide:false},
+  {img:"gallery-green-dress",title:"Night of Excellence",role:"Sentinels Award & Dinner Night",venue:"",tag:"Awards",wide:false},
+  {img:"gallery-abbas-love-letters",title:"Abba's Love Letters",role:"Book Launch",venue:"",tag:"Social",wide:false},
+  {img:"gallery-save-nigeria",title:"Creative Industry Panel",role:"Save Nigeria Campaign",venue:"",tag:"Community",wide:false},
+  {img:"gallery-becoming-mom",title:"Becoming Mom",role:"Mothers Day",venue:"",tag:"Social",wide:true},
+  {img:"portrait-cod-peace",title:"COD Mobile Watch Party",role:"Call of Duty Mobile",venue:"",tag:"Gaming",wide:false},
+  {img:"gallery-cod-crowd",title:"Champions League Watch Party",role:"Sterling Bank PLC",venue:"",tag:"Gaming",wide:false}
 ];
-const ENERGY = [
-  {w:"ENERGETIC",l:"I bring the right energy to every room — and make it contagious."},
-  {w:"INTENTIONAL",l:"Every word. Every moment. Every transition matters."},
-  {w:"ENGAGING",l:"I connect with people, not just audiences."},
-  {w:"CONFIDENT",l:"I own the stage so your event owns the moment."},
-  {w:"VERSATILE",l:"Corporate boardrooms, church auditoriums, gaming arenas — I speak them all."}
-];
-const EN_BG = ["#0A0A0A","#A81408","#0A0A0A","#F5F0E8","#A81408"];
-const EN_FG = ["#FAF7F2","#FAF7F2","#A81408","#0A0A0A","#0A0A0A"];
 const PROCESS = [
-  {s:"Discover",c:"We discuss your event, your goals and your vision."},
-  {s:"Plan",c:"We align on script, flow and all the details."},
-  {s:"Collaborate",c:"I work with your team like I'm part of it — because I am."},
-  {s:"Rehearse",c:"I prepare and fine-tune for excellence."},
-  {s:"Deliver",c:"You relax while I deliver an unforgettable experience."},
-  {s:"Celebrate",c:"Your guests leave talking about your event."}
+  {s:"Discover",c:"We talk. You tell me about your event, your audience, and what a great day looks like for you."},
+  {s:"Plan",c:"We agree the flow, the script and the small details that make a show run smooth."},
+  {s:"Collaborate",c:"I work with your planners, speakers and crew like I'm part of the team."},
+  {s:"Rehearse",c:"I show up prepared. Names pronounced right, timings tight, surprises anticipated."},
+  {s:"Deliver",c:"On the day, you focus on your guests. The stage is handled."},
+  {s:"Celebrate",c:"Your guests go home talking about it. You book the next date."}
 ];
 const TESTIMONIALS = [
   {q:"From our first event together, she carried the room like she'd been with us for years. That's why we've booked her to host our subsequent events.",n:"Dami Oguntunde",t:"CEO, Hardé Business School"},
@@ -656,37 +610,29 @@ const TESTIMONIALS = [
   {q:"Things went wrong backstage, as they always do. Majemu just smiled, switched things around, and kept the energy up like nothing happened. We were amazed.",n:"Tobiloba Adeboye",t:"Convener, Inspire Conference"}
 ];
 const FAQS = [
-  {q:"How far do you travel?",a:"Anywhere the event is. I'm based in Lagos, Nigeria, and I host across cities and countries — travel and logistics are simply built into the booking."},
-  {q:"How do bookings work?",a:"Send the date, location and type of event. I confirm availability, we hop on a discovery call, and once the agreement and deposit are in, the date is locked and we start planning your experience."},
-  {q:"Can you moderate panels and fireside chats?",a:"Yes — moderation is one of my strongest formats. I research your speakers, craft the conversation arc, and keep the discussion sharp, warm and on time."},
-  {q:"Do you host corporate events?",a:"Constantly. Product launches, summits, award nights, end-of-year parties, town halls — I switch between boardroom polish and party energy as your run of show demands."},
-  {q:"What do you need from us on event day?",a:"A stage, a mic that works, and the final run of show. Everything else — energy, presence, timing, saves when things go off-script — that's what you booked me for."}
+  {q:"How far do you travel?",a:"Anywhere the event is. I'm based in Lagos, and I've hosted in other cities too. If it means getting on a flight, we work the travel into the booking and I'll be there."},
+  {q:"How do bookings work?",a:"Send me your date, location and what kind of event it is. If I'm free, we get on a call so I can understand what you're planning. Once we agree terms and the deposit is in, your date is mine and we start building the run of show together."},
+  {q:"Can you moderate panels and fireside chats?",a:"Yes, and it's some of my favourite work. I read up on your speakers, shape the questions so the conversation actually goes somewhere, and keep everyone to time without making it feel rushed."},
+  {q:"Do you host corporate events?",a:"All the time. Summits, launches, award nights, end of year parties, town halls. I can keep it polished for the boardroom crowd or lift the energy for a party, and I'll know which one your event needs."},
+  {q:"What do you need from us on event day?",a:"A mic that works, the final run of show, and someone I can check in with backstage. Everything else is my job, including the moments when things don't go to plan."}
 ];
 
 /* ============ populate DOM ============ */
 const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
 
-const mqHTML = arr => arr.concat(arr).map(b=>`<b>${esc(b)}<i></i></b>`).join("");
-const half = Math.ceil(BRANDS.length/2);
-document.getElementById("mq1").innerHTML = mqHTML(BRANDS.slice(0,half));
-document.getElementById("mq2").innerHTML = mqHTML(BRANDS.slice(half));
+document.getElementById("brand-wall").innerHTML =
+  BRANDS.map(b=>`<b>${esc(b)}<i></i></b>`).join("");
 
-document.getElementById("ev-grid").innerHTML = EVENTS.map((e,i)=>`
-  <figure class="ev-card" data-cursor="VIEW" style="${i%3===1?"margin-top:40px":""}">
-    <div class="im ${e.r}"><img onerror="window.__imgFix&&__imgFix(this)" src="${IMGS[e.img]}" alt="${esc(e.title)} — ${esc(e.role)}" loading="lazy" /></div>
+document.getElementById("ev-grid").innerHTML = EVENTS.map((e)=>`
+  <figure class="ev-card${e.wide?" wide":""}">
+    <div class="im"><img onerror="window.__imgFix&&__imgFix(this)" src="${IMGS[e.img]}" alt="${esc(e.title)} — ${esc(e.role)}" loading="lazy" /></div>
     <figcaption class="ev-cap">
-      <p class="k">${esc(e.tag)} · ${esc(e.role)}</p>
+      <p class="k">${esc(e.tag)}</p>
       <h3>${esc(e.title)}</h3>
-      <p class="v">${esc(e.venue)}</p>
+      <p class="v">${esc([e.role,e.venue].filter(Boolean).join(" · "))}</p>
     </figcaption>
   </figure>`).join("");
 
-document.getElementById("en-wrap").innerHTML = ENERGY.map((e,i)=>`
-  <div class="en-slide" style="color:${EN_FG[i]};background:${EN_BG[i]}">
-    <span class="en-idx">0${i+1} / 0${ENERGY.length}</span>
-    <h3 class="mega en-word">${e.w}</h3>
-    <p class="en-line">${esc(e.l)}</p>
-  </div>`).join("");
 
 document.getElementById("pr-list").insertAdjacentHTML("beforeend", PROCESS.map((p,i)=>`
   <div class="pr-item ${i%2?"odd":"even"}">
@@ -810,6 +756,7 @@ if (!reduced) {
   const lineReveal = (sel, trig) => gsap.fromTo(sel,{yPercent:110},{yPercent:0,stagger:.11,duration:1.05,ease:"expo.out",scrollTrigger:{trigger:trig,start:"top 72%"}});
   lineReveal(".mf-line > span","#manifesto");
   lineReveal(".br-line > span","#brands");
+  gsap.fromTo(".brand-wall b",{y:30,opacity:0},{y:0,opacity:1,stagger:.05,duration:.8,ease:"power3.out",scrollTrigger:{trigger:".brand-wall",start:"top 82%"}});
   lineReveal(".ev-line > span","#events");
   lineReveal(".pr-hline > span","#process");
   lineReveal(".bk-line > span","#book");
@@ -826,24 +773,6 @@ if (!reduced) {
     gsap.fromTo(el,{y:80,opacity:0},{y:0,opacity:1,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%"}});
   });
 
-  /* energy pinned (desktop) */
-  if (isDesktop) {
-    const slides = gsap.utils.toArray(".en-slide");
-    slides.forEach(s=>s.style.background="transparent");
-    gsap.set(slides.slice(1),{autoAlpha:0});
-    const tl = gsap.timeline({scrollTrigger:{trigger:"#energy",start:"top top",end:"+="+(ENERGY.length*90)+"%",pin:true,scrub:.6}});
-    slides.forEach((slide,i)=>{
-      const word=slide.querySelector(".en-word"), line=slide.querySelector(".en-line"), idx=slide.querySelector(".en-idx");
-      if(i>0){
-        tl.to("#energy",{backgroundColor:EN_BG[i],duration:.35});
-        tl.fromTo(slide,{autoAlpha:0},{autoAlpha:1,duration:.15},"<");
-        tl.fromTo(word,{scale:.55,opacity:0,yPercent:20},{scale:1,opacity:1,yPercent:0,duration:.5,ease:"power2.out"},"<");
-        tl.fromTo([line,idx],{opacity:0,y:30},{opacity:1,y:0,duration:.35},"-=0.2");
-      }
-      tl.to(slide,{duration:.5});
-      if(i<slides.length-1) tl.to(slide,{autoAlpha:0,scale:1.4,filter:"blur(6px)",duration:.3});
-    });
-  }
 
   /* numbers */
   document.querySelectorAll(".nm-count").forEach(el=>{
